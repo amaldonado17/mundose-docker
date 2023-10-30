@@ -1,0 +1,37 @@
+Docker wordpress
+
+Para este laboratorio precisamos 2 contendores, uno con un servicio de bases de datos y el otro con wordpress.
+
+1. Mariadb (msyql)
+
+docker run \
+
+    -e MYSQL_ROOT_PASSWORD=abc1234 \
+
+    -e MYSQL_DATABASE=wp_dbase \
+
+    --name wordpressdb \
+
+    -v /opt/diario.net/mysql:/var/lib/mysql \
+
+    -d mariadb:latest
+
+
+2. Wordpress
+$ docker run \
+
+    -e WORDPRESS_DB_PASSWORD=abc1234 \
+
+    -e WORDPRESS_DB_USER=root \
+
+    -e WORDPRESS_DB_NAME=wp_dbase \
+
+    --name diario.net \
+
+    --link wordpressdb:mysql \
+
+    -p 80:80 \
+
+    -v /opt/diario.net/wordpress:/var/www/html \
+
+    -d wordpress

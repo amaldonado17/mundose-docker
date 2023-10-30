@@ -1,0 +1,30 @@
+1- Crear directorio de trabajo
+2- Crear index.html
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Página Básica de Ejemplo</title>
+</head>
+<body>
+    <h1>Hola desde Docker y Apache</h1>
+    <p>Esta es una página HTML básica servida por un contenedor de Docker con Apache.</p>
+</body>
+</html>
+
+
+3- Crear archivo Dockerfile
+# Utiliza la imagen base de Apache
+FROM httpd:2.4
+
+# Copia el archivo index.html al directorio de documentos del servidor Apache
+COPY index.html /usr/local/apache2/htdocs/
+
+
+4- Construir mi imagen
+docker build -t mi-apache-basico .
+
+
+5- Levantar contenedor:
+docker run -d -p 8080:80 mi-apache-basico
+
+
