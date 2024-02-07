@@ -1,6 +1,7 @@
-# Laboratorio Docker - Aplicación PHP
+# Laboratorio Docker - Aplicación PHP "Mi IP"
 
 Este es un laboratorio básico de Docker que muestra cómo crear una aplicación web simple utilizando PHP y ejecutarla dentro de un contenedor Docker.
+La aplicación solamente mostrará la ip del server que la ejecuta o la del contenedor en este caso, esto es util cuando balanceamos entre varios contenedores y queremos saber quien es el que responde la solicitud.
 
 ## Pasos
 
