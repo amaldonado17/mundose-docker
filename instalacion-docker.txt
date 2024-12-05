@@ -32,3 +32,18 @@ Para que los cambios sean efectivos debemos volver a loguearnos en el sistema.
 Ejecutar un contenedor 'hello-world'
 
 $ docker run hello-world
+
+
+-----------Instalación Mediante Script Oficial:
+
+curl -fsSL https://get.docker.com -o get-docker.sh
+sudo sh get-docker.sh
+
+-Verificar instalación:
+docker --version
+
+-Agregar permisos de ejecución, para no utilizar sudo:
+sudo usermod -aG docker $USER
+
+
+
